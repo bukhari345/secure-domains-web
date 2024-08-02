@@ -1,0 +1,95 @@
+/* Base styles */
+.animated-list {
+    list-style-type: disc; /* Use bullets */
+    padding-left: 20px; /* Adds padding to make bullets visible */
+}
+
+/* Base styles for list items */
+.animated-list li {
+    opacity: 0; /* Hide list items initially */
+    transform: translateX(-50px); /* Move list items to the left */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Keyframes for each list item */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation for list items */
+.animated-list li {
+    animation: fadeInLeft 1s ease-out forwards;
+}
+
+/* Animation delay for each list item */
+.animated-list li:nth-child(1) {
+    animation-delay: 0.5s; /* Start with a 0.5-second delay */
+}
+
+.animated-list li:nth-child(2) {
+    animation-delay: 1s; /* 1-second delay */
+}
+
+.animated-list li:nth-child(3) {
+    animation-delay: 1.5s; /* 1.5-second delay */
+}
+
+.animated-list li:nth-child(4) {
+    animation-delay: 2s; /* 2-second delay */
+}
+
+.animated-list li:nth-child(5) {
+    animation-delay: 2.5s; /* 2.5-second delay */
+}
+
+.animated-list li:nth-child(6) {
+    animation-delay: 3s; /* 3-second delay */
+}
+
+.animated-list li:nth-child(7) {
+    animation-delay: 3.5s; /* 3.5-second delay */
+}
+
+.animated-list li:nth-child(8) {
+    animation-delay: 4s; /* 4-second delay */
+}
+
+/* Animation for image */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Image animation */
+img.img-fluid {
+    animation: slideInRight 1s ease-out forwards;
+}
+
+/* Button animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+button {
+    opacity: 0; /* Hide button initially */
+    transform: translateY(20px); /* Move button down */
+    animation: fadeInUp 1s ease-out 4.5s forwards; /* Adjust delay to appear after list items */
+}
